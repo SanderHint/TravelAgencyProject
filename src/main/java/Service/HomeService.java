@@ -2,8 +2,10 @@ package Service;
 
 import Repository.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
 
+@SpringBootApplication
 @Service
 public class HomeService {
     private final TourRepository tourRepository;
