@@ -1,6 +1,6 @@
 package Service;
 
-import Repository.TourRepository;
+import repository.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
