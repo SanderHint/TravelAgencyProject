@@ -1,8 +1,10 @@
 package Service;
-import repository.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import repository.*;
+
 
 @Component
 @Service
@@ -13,24 +15,24 @@ public class AdminService {
     private final AirportRepository airportRepository;
     private final HotelRepository hotelRepository;
     private final TourRepository tourRepository;
-    // Other dependencies
+
 
     @Autowired
     public AdminService(
-            ContinentRepository continentRepository,
+            ContinentRepository ContinentRepository,
             CountryRepository countryRepository,
             CityRepository cityRepository,
             AirportRepository airportRepository,
             HotelRepository hotelRepository,
             TourRepository tourRepository) {
-        this.continentRepository = continentRepository;
+
+        this.continentRepository = ContinentRepository;
         this.countryRepository = countryRepository;
         this.cityRepository = cityRepository;
         this.airportRepository = airportRepository;
         this.hotelRepository = hotelRepository;
         this.tourRepository = tourRepository;
-        // Initialize other dependencies
-    }
 
-    // Implement business logic for managing the tour offer, including adding/editing tours and configuring database entities
+    }
 }
+    // Implement business logic for managing the tour offer, including adding/editing tours and configuring database entities

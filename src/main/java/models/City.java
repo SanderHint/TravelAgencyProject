@@ -1,6 +1,6 @@
 package models;
 
-import jakarta.persistence.ManyToOne;
+import javax.persistence.ManyToOne;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

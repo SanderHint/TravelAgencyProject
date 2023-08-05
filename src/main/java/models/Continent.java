@@ -1,9 +1,6 @@
 package models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Continent {
@@ -12,5 +9,7 @@ public class Continent {
     private Long id;
     private String name;
 
-    // Constructors, getters, setters
+    @ManyToOne
+    @JoinColumn(name = "parent_continent_id") // Change this to the appropriate foreign key column name
+    private Continent parentContinent;
 }
