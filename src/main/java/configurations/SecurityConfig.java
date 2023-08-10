@@ -10,9 +10,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import static utils.Constants.Security.AUTHOR_ADMIN;
+import static utils.Constants.Security.AUTHOR_USER;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -23,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/home.html", true) // Redirect to the homepage after successful login
+                .defaultSuccessUrl("/home", true)
                 .permitAll()
                 .and()
                 .logout()
@@ -31,14 +36,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
     }
 
-    // ... other configuration if needed
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
                 .withUser("user")
-                .password("{bcrypt}$2a$10$8pMRas3DBJi/M4v0knUnKuR8uuxPsd94mHDldJK6q7nbwVOl9b8Dm") // Use your encoded password here
+                .password(passwordEncoder().encode("user"))
                 .roles("USER");
     }
 }
