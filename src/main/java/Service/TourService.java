@@ -1,8 +1,11 @@
 package Service;
 
+import models.Tour;
 import repository.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class TourService {
@@ -15,5 +18,9 @@ public class TourService {
         // Initialize other dependencies
     }
 
-    // Implement business logic for searching tours based on given criteria and retrieving detailed tour information
+    public List<Tour> getAllTours() {
+
+
+        return null;
+    }
 }

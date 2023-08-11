@@ -1,0 +1,24 @@
+{
+  "name": "my-travel-agency",
+  "version": "1.0.0",
+  "description": "My Travel Agency Website",
+  "scripts": {
+    "start": "npm run build && node server.js",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "node node_modules/startbootstrap-agency/scripts/build-scss.js",
+    "build:js": "node node_modules/startbootstrap-agency/scripts/build-scripts.js"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "autoprefixer": "^10.4.14",
+    "bootstrap": "^5.3.1",
+    "express": "^4.18.2",
+    "sass": "^1.65.1",
+    "shelljs": "^0.8.5",
+    "startbootstrap-agency": "^7.0.12",
+    "upath": "^2.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
