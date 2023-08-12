@@ -15,6 +15,13 @@ window.addEventListener('DOMContentLoaded', event => {
 
     };
 
+    // Search bar movement
+    $(document).ready(function() {
+        $('#searchToggle').click(function() {
+            $('#searchBar').toggleClass('active');
+        });
+    });
+
     // Shrink the navbar 
     navbarShrink();
 

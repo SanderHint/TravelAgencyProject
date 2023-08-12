@@ -77,6 +77,49 @@
   box-sizing: border-box;
 }
 
+
+.search-icon {
+  position: relative;
+}
+
+.search-bar {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input[type="search"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none; /* Add this line to remove the outline */
+}
+
+.search-bar button img {
+  width: 20px;
+  height: 20px;
+}
+/* Show the search bar when it has the 'active' class */
+.search-bar.active {
+  right: 0; /* Slide open to the right when active */
+}
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -593,6 +636,7 @@ progress {
   max-width: 100%;
   height: auto;
 }
+
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -3195,7 +3239,7 @@ textarea.form-control-lg {
   white-space: nowrap;
 }
 .dropdown-toggle::after {
-  display: inline-block;
+  display: block;
   margin-left: 0.255em;
   vertical-align: 0.255em;
   content: "";
@@ -3242,8 +3286,8 @@ textarea.form-control-lg {
   padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
   margin: 0;
   font-size: var(--bs-dropdown-font-size);
-  color: 212529FF;
-  /*color: var(--bs-dropdown-color);*/
+
+  color: var(--bs-dropdown-color);
   text-align: left;
   list-style: none;
   background-color: var(--bs-dropdown-bg);
@@ -10949,12 +10993,12 @@ header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
-  /*color: #fff;*/
-  background-image: url("header-bg.jpg");
-  background-repeat: no-repeat;
+  color: #fff;
+  background-image: url("/img/header-bg.jpg");
+  background-repeat: repeat;
   background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
+  background-position: top center;
+  background-size: 100% auto;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -10973,7 +11017,7 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
+    padding-top: 10rem;
     padding-bottom: 12.5rem;
   }
   header.masthead .masthead-subheading {
@@ -11018,7 +11062,7 @@ header.masthead .masthead-heading {
   opacity: 1;
 }
 #portfolio .portfolio-item .portfolio-caption {
-  padding: 1.5rem;
+  padding: 0.5rem;
   text-align: center;
   background-color: #fff;
 }

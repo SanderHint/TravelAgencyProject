@@ -8,42 +8,198 @@
     <title>Sander's Travel Agency</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
     <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/scripts.js"></script>
 </head>
 <body id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="#page-top"><img src="/static/icons/airplane-fill.svg" alt="..." /></a>
+        <a class="navbar-brand" href="#page-top"><img class="img-fluid" src="/img/icons/airplane-fill.svg" alt="Airplane Icon" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars ms-1"></i>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#services">Booking</a></li>
-                <li class="nav-item"><a class="nav-link" href="#portfolio">City</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">Airport</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Booking">Booking</a></li>
+                <li class="nav-item"><a class="nav-link" href="/City">City</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Airport">Airport</a></li>
                 <li class="nav-item"><a class="nav-link" href="#team">City</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Hotel</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Hotel">Hotel</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Contact">Contact</a></li>
+                <li class="nav-item">
+                    <div class="search-icon">
+                        <button id="searchToggle" class="btn btn-outline-success">
+                            <img src="/img/icons/search.svg" alt="Search Icon">
+                        </button>
+                        <div id="searchBar" class="search-bar">
+                            <form action="/search" method="GET">
+                                <input type="search" placeholder="Search" aria-label="Search" name="q">
+                                <button type="submit">
+                                    <img src="/img/icons/search.svg" alt="Search Icon">
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
+<!-- Your other HTML content -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap JS (ensure you have this properly included) -->
+<!-- Your other scripts -->
+<script>
+    // Search bar movement
+    $(document).ready(function() {
+        $('#searchToggle').click(function() {
+            $('#searchBar').toggleClass('active');
+        });
+    });
+</script>
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
         <div class="masthead-subheading">Welcome to the travel agency website!</div>
         <div class="masthead-heading text-uppercase">Book your travel with us!</div>
-        <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+<!--        <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>-->
+
+        <section class="promoted-trips mt-1">
+            <h2>Promoted Trips</h2>
+            <!-- Display promoted trips here -->
+            <!-- Portfolio item 1-->
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                                </div>
+                                                <img class="img-fluid" src="/img/portfolio/newyork.jpg" alt="..."  />
+                                            </a>
+                                            <div class="portfolio-caption">
+                                                <div class="portfolio-caption-heading">New York</div>
+                                                <div class="portfolio-caption-subheading text-muted">USA</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 2-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="/img/portfolio/barcelona.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Barcelona</div>
+                            <div class="portfolio-caption-subheading text-muted">Spain</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 3-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="/img/portfolio/tallinn.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Tallinn</div>
+                            <div class="portfolio-caption-subheading text-muted">Estonia</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <!-- Portfolio item 4-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="/img/portfolio/rome.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Rome</div>
+                            <div class="portfolio-caption-subheading text-muted">Italy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 5-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="/img/portfolio/tokyo.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Tokyo</div>
+                            <div class="portfolio-caption-subheading text-muted">Japan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <!-- Portfolio item 6-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="/img/portfolio/london.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">London</div>
+                            <div class="portfolio-caption-subheading text-muted">United Kingdom</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="upcoming-tours">
+            <h2>Upcoming Tours</h2>
+            <div class="globally-upcoming">
+                <h3>Upcoming Tours Globally</h3>
+                <!-- Display upcoming tours globally here -->
+            </div>
+            <div class="continent-upcoming">
+                <h3>Upcoming Tours by Continent</h3>
+                <!-- Display upcoming tours by continent here -->
+            </div>
+            <div class="country-upcoming">
+                <h3>Upcoming Tours by Country</h3>
+                <!-- Display upcoming tours by country here -->
+            </div>
+        </section>
+
+        <section class="recently-purchased">
+            <h2>Recently Purchased Tours</h2>
+            <!-- Display recently purchased tours here -->
+        </section>
+
+        <section class="reduced-price">
+            <h2>Tours with Reduced Price</h2>
+            <!-- Display tours with reduced price here -->
+        </section>
+
+        <section class="limited-availability">
+            <h2>Tours with Limited Availability</h2>
+            <!-- Display tours with limited availability here -->
+        </section>
     </div>
 </header>
 <!-- Services-->
@@ -88,98 +244,98 @@
             <h2 class="section-heading text-uppercase">Choose a city to travel to</h2>
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 1-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="/static/img/logos/travel1.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Threads</div>
-                        <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 2-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="/img/portfolio/2.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Explore</div>
-                        <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <!-- Portfolio item 3-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="/img/portfolio/3.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Finish</div>
-                        <div class="portfolio-caption-subheading text-muted">Identity</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                <!-- Portfolio item 4-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="/img/portfolio/4.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Lines</div>
-                        <div class="portfolio-caption-subheading text-muted">Branding</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                <!-- Portfolio item 5-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="/img/portfolio/5.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Southwest</div>
-                        <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <!-- Portfolio item 6-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="/img/portfolio/6.jpg" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Window</div>
-                        <div class="portfolio-caption-subheading text-muted">Photography</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="row">-->
+<!--            <div class="col-lg-4 col-sm-6 mb-4">-->
+<!--                &lt;!&ndash; Portfolio item 1&ndash;&gt;-->
+<!--                <div class="portfolio-item">-->
+<!--                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">-->
+<!--                        <div class="portfolio-hover">-->
+<!--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                        </div>-->
+<!--                        <img class="img-fluid" src="/static/img/logos/travel1.jpg" alt="..." />-->
+<!--                    </a>-->
+<!--                    <div class="portfolio-caption">-->
+<!--                        <div class="portfolio-caption-heading">Threads</div>-->
+<!--                        <div class="portfolio-caption-subheading text-muted">Illustration</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-sm-6 mb-4">-->
+<!--                &lt;!&ndash; Portfolio item 2&ndash;&gt;-->
+<!--                <div class="portfolio-item">-->
+<!--                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">-->
+<!--                        <div class="portfolio-hover">-->
+<!--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                        </div>-->
+<!--                        <img class="img-fluid" src="/img/portfolio/2.jpg" alt="..." />-->
+<!--                    </a>-->
+<!--                    <div class="portfolio-caption">-->
+<!--                        <div class="portfolio-caption-heading">Explore</div>-->
+<!--                        <div class="portfolio-caption-subheading text-muted">Graphic Design</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-sm-6 mb-4">-->
+<!--                &lt;!&ndash; Portfolio item 3&ndash;&gt;-->
+<!--                <div class="portfolio-item">-->
+<!--                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">-->
+<!--                        <div class="portfolio-hover">-->
+<!--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                        </div>-->
+<!--                        <img class="img-fluid" src="/img/portfolio/3.jpg" alt="..." />-->
+<!--                    </a>-->
+<!--                    <div class="portfolio-caption">-->
+<!--                        <div class="portfolio-caption-heading">Finish</div>-->
+<!--                        <div class="portfolio-caption-subheading text-muted">Identity</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">-->
+<!--                &lt;!&ndash; Portfolio item 4&ndash;&gt;-->
+<!--                <div class="portfolio-item">-->
+<!--                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">-->
+<!--                        <div class="portfolio-hover">-->
+<!--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                        </div>-->
+<!--                        <img class="img-fluid" src="/img/portfolio/4.jpg" alt="..." />-->
+<!--                    </a>-->
+<!--                    <div class="portfolio-caption">-->
+<!--                        <div class="portfolio-caption-heading">Lines</div>-->
+<!--                        <div class="portfolio-caption-subheading text-muted">Branding</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">-->
+<!--                &lt;!&ndash; Portfolio item 5&ndash;&gt;-->
+<!--                <div class="portfolio-item">-->
+<!--                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">-->
+<!--                        <div class="portfolio-hover">-->
+<!--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                        </div>-->
+<!--                        <img class="img-fluid" src="/img/portfolio/5.jpg" alt="..." />-->
+<!--                    </a>-->
+<!--                    <div class="portfolio-caption">-->
+<!--                        <div class="portfolio-caption-heading">Southwest</div>-->
+<!--                        <div class="portfolio-caption-subheading text-muted">Website Design</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-sm-6">-->
+<!--                &lt;!&ndash; Portfolio item 6&ndash;&gt;-->
+<!--                <div class="portfolio-item">-->
+<!--                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">-->
+<!--                        <div class="portfolio-hover">-->
+<!--                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>-->
+<!--                        </div>-->
+<!--                        <img class="img-fluid" src="/img/portfolio/6.jpg" alt="..." />-->
+<!--                    </a>-->
+<!--                    <div class="portfolio-caption">-->
+<!--                        <div class="portfolio-caption-heading">Window</div>-->
+<!--                        <div class="portfolio-caption-subheading text-muted">Photography</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </section>
 <!-- About-->
@@ -594,11 +750,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="/js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
-
