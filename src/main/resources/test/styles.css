@@ -85,6 +85,46 @@
   box-sizing: border-box;
 }
 
+
+.search-icon {
+  position: relative;
+}
+
+.search-bar {
+  display: none;
+  position: relative;
+  top: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar.active {
+  display: block;
+}
+
+.search-bar input[type="search"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar button img {
+  width: 20px;
+  height: 20px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
