@@ -63,9 +63,11 @@ app.get('/search', (req, res) => {
     // Implement your search logic here
     // For demonstration, let's assume searchResults is an array of search results
     const searchResults = [
-        'Result 1',
-        'Result 2',
-        'Result 3',
+        'Booking',
+        'Tours',
+        'City',
+        'Airport',
+        'Hotel',
         // ... more search results ...
     ];
 

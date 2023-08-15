@@ -23,7 +23,7 @@ public class HomeController {
         model.addAttribute("promotedTrips", homeService.getPromotedTrips());
         model.addAttribute("upcomingTours", homeService.getUpcomingToursGlobally());
 
-        return "index"; // Return the name of the view/template to render (e.g., "index.html")
+        return "index";
     }
     @GetMapping
     public String redirectToHomepage() {

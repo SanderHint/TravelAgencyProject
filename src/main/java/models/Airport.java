@@ -12,5 +12,4 @@ public class Airport {
     @ManyToOne
     private City city;
 
-    // Constructors, getters, setters
 }
